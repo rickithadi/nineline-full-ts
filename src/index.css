@@ -1,0 +1,37 @@
+/* Critical CSS for performance */
+html {
+  font-display: swap;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Reduce layout shift */
+.container {
+  contain: layout style paint;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-body: Inter, Helvetica, Arial, sans-serif;
+    --font-heading: Inter, Helvetica, Arial, sans-serif;
+  }
+
+  body {
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
